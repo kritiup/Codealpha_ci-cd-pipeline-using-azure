@@ -1,0 +1,27 @@
+# Keep the build context small and the image reproducible.
+# node_modules is reinstalled inside the image from package-lock.json,
+# and dist/ is rebuilt there — copying local copies in would let a stale
+# machine-specific build leak into the image.
+node_modules
+dist
+dist-ssr
+
+.git
+.gitignore
+.github
+
+docs
+infra
+azure-pipelines.yml
+README.md
+*.md
+
+.vscode
+.idea
+.DS_Store
+*.local
+.vite
+
+logs
+*.log
+npm-debug.log*
